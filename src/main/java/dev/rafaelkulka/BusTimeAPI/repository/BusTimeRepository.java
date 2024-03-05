@@ -126,7 +126,8 @@ public class BusTimeRepository {
 
                 if (diferencaEmDias < 5) {
                     return objectMapper.readValue(arquivoJson, BusTime.class);
-                } else {
+                }
+            }
                     try {
                         String url = "https://www.transpiedade.com.br";
                         String htmlContent = downloadHTML(url);
@@ -153,9 +154,6 @@ public class BusTimeRepository {
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
-                }
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
