@@ -114,20 +114,20 @@ public class BusTimeRepository {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            File arquivoJson = new File(Settings.pathFile);
+            //File arquivoJson = new File(Settings.pathFile);
 
-            if (arquivoJson.exists()) {
-                long ultimaModificacaoEmMillis = arquivoJson.lastModified();
-                Date ultimaModificacaoDate = new Date(ultimaModificacaoEmMillis);
-
-                Date dataAtual = new Date();
-
-                long diferencaEmDias = TimeUnit.MILLISECONDS.toDays(dataAtual.getTime() - ultimaModificacaoDate.getTime());
-
-                if (diferencaEmDias < 5) {
-                    return objectMapper.readValue(arquivoJson, BusTime.class);
-                }
-            }
+//            if (arquivoJson.exists()) {
+//                long ultimaModificacaoEmMillis = arquivoJson.lastModified();
+//                Date ultimaModificacaoDate = new Date(ultimaModificacaoEmMillis);
+//
+//                Date dataAtual = new Date();
+//
+//                long diferencaEmDias = TimeUnit.MILLISECONDS.toDays(dataAtual.getTime() - ultimaModificacaoDate.getTime());
+//
+//                if (diferencaEmDias < 5) {
+//                    return objectMapper.readValue(arquivoJson, BusTime.class);
+//                }
+//            }
                     try {
                         String url = "https://www.transpiedade.com.br";
                         String htmlContent = downloadHTML(url);
@@ -145,16 +145,16 @@ public class BusTimeRepository {
                             qtd++;
                         }
 
-                        try {
-                            objectMapper.writeValue(new File(Settings.pathFile), busTime);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+//                        try {
+//                            objectMapper.writeValue(new File(Settings.pathFile), busTime);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
 
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

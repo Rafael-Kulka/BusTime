@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BusTimeController {
+    private BusTime busTime = null;
     @GetMapping("/busTimes")
     public ResponseEntity<BusTime> getAllTimes(){
-        return ResponseEntity.status(HttpStatus.OK).body(BusTimeRepository.getBusTimes());
+        if(busTime == null){
+            busTime = BusTimeRepository.getBusTimes();
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(busTime);
     }
 }
