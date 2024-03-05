@@ -1,0 +1,10 @@
+dev\rafaelkulka\BusTimeAPI\models\Linha.class
+dev\rafaelkulka\BusTimeAPI\repository\BusTimeRepository.class
+dev\rafaelkulka\BusTimeAPI\models\BusTimes\HoraBairro.class
+dev\rafaelkulka\BusTimeAPI\models\BusTimes\Linhas.class
+dev\rafaelkulka\BusTimeAPI\models\BusTimes\HoraTerminal.class
+dev\rafaelkulka\BusTimeAPI\controllers\BusTimeController.class
+dev\rafaelkulka\BusTimeAPI\Settings.class
+dev\rafaelkulka\BusTimeAPI\models\BusTimes\BusTime.class
+dev\rafaelkulka\BusTimeAPI\BusTimeApiApplication.class
+dev\rafaelkulka\BusTimeAPI\models\BusTimes\Horario.class
